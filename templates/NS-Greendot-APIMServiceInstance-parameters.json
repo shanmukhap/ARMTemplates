@@ -6,7 +6,7 @@
       "value": "NS-Greendot-APIMServiceInstance"
     },
     "LinkedTemplatesBaseUrl": {
-      "value": "https://github.com/shanmukhap/ARMTemplates/tree/main/templates"
+      "value": "https://github.com/shanmukhap/ARMTemplates/blob/main/templates/"
     }   
   },
   "resources": []
