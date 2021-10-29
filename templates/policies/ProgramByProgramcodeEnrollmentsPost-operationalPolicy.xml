@@ -1,0 +1,113 @@
+<policies>
+	<inbound>
+		<base />
+		<set-variable name="IsMockEnabled" value="@(context.Request.Headers.GetValueOrDefault("IsMockEnabled","").Contains("true"))" />
+		<choose>
+			<when condition="@(context.Variables.GetValueOrDefault<bool>("IsMockEnabled"))">
+				<set-variable name="isSuccess" value="@(context.Request.Headers.GetValueOrDefault("ResponseStatusCode","").Contains("200"))" />
+				<set-variable name="isNotFound" value="@(context.Request.Headers.GetValueOrDefault("ResponseStatusCode","").Contains("404"))" />
+			    <set-variable name="isBadRequest" value="@(context.Request.Headers.GetValueOrDefault("ResponseStatusCode","").Contains("400"))" />
+				<choose>
+					<when condition="@(context.Variables.GetValueOrDefault<bool>("isSuccess"))">
+						<return-response>
+							<set-status code="200" reason="Success" />
+							<set-body>{
+						 "success": true,
+						 "data": {
+						 {
+								"account": {
+								"accountIdentifier": "0b830092-e5d4-45b8-ad26-8a42c94ddd4c",
+								"accountReferenceNumber": "TUF9438864",
+								"status": "pending",
+								"statusReasons": [
+								"verificationNeeded"
+								"accountStatusChangedDateTime": "2018-11-01T23:42:02.727Z",
+								],
+								"directDepositInformation": {
+								"accountNumber": "115608195748333",
+								31
+								"routingNumber": "123456789"
+								},
+								"purses": [{
+								"purseIdentifier": "562a27ec-6cae-4459-a522-be94b4570f78",
+								"purseType": "primary",
+								"availableBalance": 0,
+								"ledgerBalance": 0,
+								"availableBalanceAsOfDateTime": "2018-08-29T01:43:36.242Z",
+								"ledgerBalanceAsOfDateTime": "2018-08-29T01:43:36.242Z"
+								}],
+								"accountHolders": [{
+								"user": {
+								"userIdentifier": "434c1349-1edb-453b-91c3-69169b4ef3a8",
+								"isPrimaryAccountHolder": true,
+								"status": "active",
+								"kycStateData": {
+								"ofacStatus": "pending",
+								"kycStatus": "pending",
+								"kycPendingGate": "none"
+								}
+								},
+								"paymentInstruments": [{
+								“paymentIdentifier”: “562a27ec-6cae-4459-a522-be94b4570f78”,
+								 "paymentInstrumentIdentifier": "20433e90-0935-4ca1-8bebae7de12ef759",
+								"paymentInstrumentType": "virtual",
+								"status": "notActivated",
+								"isPinSet": true,
+								"last4Pan": "1234",
+								"activatedDateTime": "2018-08-29T01:43:36.242Z",
+								"issuedDateTime": "2018-08-29T01:43:36.242Z",
+								“isPrivateDataViewable”: “false”
+								}]
+								}],
+								"termsAcceptances": [{
+								"termsIdentifier": "daa",
+								"termsAcceptanceFlag": true,
+								"termsAcceptanceDateTime": "2018-08-29T01:43:36.242Z"
+								}]
+								} 
+						 }
+							}</set-body>
+						</return-response>
+					</when>
+					<when condition="@(context.Variables.GetValueOrDefault<bool>("isBadRequest"))">
+						<return-response>
+							<set-status code="400" reason="Bad Request" />
+							<set-body>
+{
+   "success":true,
+   "data":"Bad Request"
+} </set-body>
+						</return-response>
+					</when>
+					<when condition="@(context.Variables.GetValueOrDefault<bool>("isNotFound"))">
+						<return-response>
+							<set-status code="404" reason="Not Found" />
+							<set-body>
+{
+   "success":true,
+   "data":"Not Found"
+} </set-body>
+						</return-response>
+					</when>
+					<otherwise>
+						<return-response>
+							<set-status code="404" reason="Not Available" />
+							<set-body>{
+						 "success": true,
+						 "data":"Is Not Available"</set-body>
+						</return-response>
+					</otherwise>
+				</choose>
+			</when>
+		</choose>
+	</inbound>
+	<outbound>
+		<base />
+	</outbound>
+	<backend>
+		<base />
+	</backend>
+	<on-error>
+		<base />
+	</on-error>
+</policies>

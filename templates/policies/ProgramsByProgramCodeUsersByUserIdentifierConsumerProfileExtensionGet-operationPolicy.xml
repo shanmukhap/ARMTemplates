@@ -1,0 +1,61 @@
+<policies>
+	<inbound>
+		<base />
+		<set-variable name="IsMockEnabled" value="@(context.Request.Headers.GetValueOrDefault("IsMockEnabled","").Contains("true"))" />
+		<choose>
+			<when condition="@(context.Variables.GetValueOrDefault<bool>("IsMockEnabled"))">
+				<set-variable name="isSuccess" value="@(context.Request.Headers.GetValueOrDefault("ResponseStatusCode","").Contains("200"))" />
+				<set-variable name="isNotFound" value="@(context.Request.Headers.GetValueOrDefault("ResponseStatusCode","").Contains("404"))" />
+			    <set-variable name="isBadRequest" value="@(context.Request.Headers.GetValueOrDefault("ResponseStatusCode","").Contains("400"))" />
+				<choose>
+					<when condition="@(context.Variables.GetValueOrDefault<bool>("isSuccess"))">
+						<return-response>
+							<set-status code="200" reason="Success" />
+							<set-body>{
+						 "success": true,
+						 "data": { }
+							}</set-body>
+						</return-response>
+					</when>
+					<when condition="@(context.Variables.GetValueOrDefault<bool>("isBadRequest"))">
+						<return-response>
+							<set-status code="400" reason="Bad Request" />
+							<set-body>
+{
+   "success":true,
+   "data":"Bad Request"
+} </set-body>
+						</return-response>
+					</when>
+					<when condition="@(context.Variables.GetValueOrDefault<bool>("isNotFound"))">
+						<return-response>
+							<set-status code="404" reason="Not Found" />
+							<set-body>
+{
+   "success":true,
+   "data":"Not Found"
+} </set-body>
+						</return-response>
+					</when>
+					<otherwise>
+						<return-response>
+							<set-status code="404" reason="Not Available" />
+							<set-body>{
+						 "success": true,
+						 "data":"Is Not Available"</set-body>
+						</return-response>
+					</otherwise>
+				</choose>
+			</when>
+		</choose>
+	</inbound>
+	<outbound>
+		<base />
+	</outbound>
+	<backend>
+		<base />
+	</backend>
+	<on-error>
+		<base />
+	</on-error>
+</policies>
