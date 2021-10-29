@@ -7,13 +7,7 @@
     },
     "LinkedTemplatesBaseUrl": {
       "value": "https://github.com/shanmukhap/ARMTemplates/tree/main/templates"
-    },
-    "LinkedTemplatesUrlQueryString": {
-      "value": "https://github.com/shanmukhap/ARMTemplates/tree/main/templates"
-    },
-    "PolicyXMLBaseUrl": {
-      "value": "https://github.com/shanmukhap/ARMTemplates/tree/main/templates/policies"
-    }
+    }   
   },
   "resources": []
 }
