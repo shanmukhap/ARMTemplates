@@ -3,16 +3,16 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "ApimServiceName": {
-      "value": ""
+      "value": "NS-Greendot-APIMServiceInstance"
     },
     "LinkedTemplatesBaseUrl": {
-      "value": ""
+      "value": "https://github.com/shanmukhap/ARMTemplates/tree/main/templates"
     },
     "LinkedTemplatesUrlQueryString": {
-      "value": ""
+      "value": "https://github.com/shanmukhap/ARMTemplates/tree/main/templates"
     },
     "PolicyXMLBaseUrl": {
-      "value": ""
+      "value": "https://github.com/shanmukhap/ARMTemplates/tree/main/templates/policies"
     }
   },
   "resources": []
