@@ -1,0 +1,382 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "ApimServiceName": {
+      "type": "string"
+    },
+    "PolicyXMLBaseUrl": {
+      "type": "string"
+    }
+  },
+  "resources": [
+    {
+      "properties": {
+        "displayName": "Account"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/Account')]",
+      "type": "Microsoft.ApiManagement/service/tags",
+      "apiVersion": "2019-01-01"
+    },
+    {
+      "properties": {
+        "displayName": "Adjustment"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/Adjustment')]",
+      "type": "Microsoft.ApiManagement/service/tags",
+      "apiVersion": "2019-01-01"
+    },
+    {
+      "properties": {
+        "displayName": "AMMRule"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/AMMRule')]",
+      "type": "Microsoft.ApiManagement/service/tags",
+      "apiVersion": "2019-01-01"
+    },
+    {
+      "properties": {
+        "displayName": "Authentication"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/Authentication')]",
+      "type": "Microsoft.ApiManagement/service/tags",
+      "apiVersion": "2019-01-01"
+    },
+    {
+      "properties": {
+        "displayName": "BillPay"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/BillPay')]",
+      "type": "Microsoft.ApiManagement/service/tags",
+      "apiVersion": "2019-01-01"
+    },
+    {
+      "properties": {
+        "displayName": "BusinessProfile"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/BusinessProfile')]",
+      "type": "Microsoft.ApiManagement/service/tags",
+      "apiVersion": "2019-01-01"
+    },
+    {
+      "properties": {
+        "displayName": "CardOption"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/CardOption')]",
+      "type": "Microsoft.ApiManagement/service/tags",
+      "apiVersion": "2019-01-01"
+    },
+    {
+      "properties": {
+        "displayName": "CareCase"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/CareCase')]",
+      "type": "Microsoft.ApiManagement/service/tags",
+      "apiVersion": "2019-01-01"
+    },
+    {
+      "properties": {
+        "displayName": "CashbackReward"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/CashbackReward')]",
+      "type": "Microsoft.ApiManagement/service/tags",
+      "apiVersion": "2019-01-01"
+    },
+    {
+      "properties": {
+        "displayName": "CategorizeTransaction"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/CategorizeTransaction')]",
+      "type": "Microsoft.ApiManagement/service/tags",
+      "apiVersion": "2019-01-01"
+    },
+    {
+      "properties": {
+        "displayName": "CNAPI"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/CNAPI')]",
+      "type": "Microsoft.ApiManagement/service/tags",
+      "apiVersion": "2019-01-01"
+    },
+    {
+      "properties": {
+        "displayName": "ContactVerification"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/ContactVerification')]",
+      "type": "Microsoft.ApiManagement/service/tags",
+      "apiVersion": "2019-01-01"
+    },
+    {
+      "properties": {
+        "displayName": "CreditBuilderLoan"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/CreditBuilderLoan')]",
+      "type": "Microsoft.ApiManagement/service/tags",
+      "apiVersion": "2019-01-01"
+    },
+    {
+      "properties": {
+        "displayName": "CustomCard"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/CustomCard')]",
+      "type": "Microsoft.ApiManagement/service/tags",
+      "apiVersion": "2019-01-01"
+    },
+    {
+      "properties": {
+        "displayName": "DeviceVerification"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/DeviceVerification')]",
+      "type": "Microsoft.ApiManagement/service/tags",
+      "apiVersion": "2019-01-01"
+    },
+    {
+      "properties": {
+        "displayName": "Disbursement"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/Disbursement')]",
+      "type": "Microsoft.ApiManagement/service/tags",
+      "apiVersion": "2019-01-01"
+    },
+    {
+      "properties": {
+        "displayName": "DisputeAutomation"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/DisputeAutomation')]",
+      "type": "Microsoft.ApiManagement/service/tags",
+      "apiVersion": "2019-01-01"
+    },
+    {
+      "properties": {
+        "displayName": "ECash"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/ECash')]",
+      "type": "Microsoft.ApiManagement/service/tags",
+      "apiVersion": "2019-01-01"
+    },
+    {
+      "properties": {
+        "displayName": "EGift"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/EGift')]",
+      "type": "Microsoft.ApiManagement/service/tags",
+      "apiVersion": "2019-01-01"
+    },
+    {
+      "properties": {
+        "displayName": "Enrollments"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/Enrollments')]",
+      "type": "Microsoft.ApiManagement/service/tags",
+      "apiVersion": "2019-01-01"
+    },
+    {
+      "properties": {
+        "displayName": "Event"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/Event')]",
+      "type": "Microsoft.ApiManagement/service/tags",
+      "apiVersion": "2019-01-01"
+    },
+    {
+      "properties": {
+        "displayName": "Experian"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/Experian')]",
+      "type": "Microsoft.ApiManagement/service/tags",
+      "apiVersion": "2019-01-01"
+    },
+    {
+      "properties": {
+        "displayName": "ExternalCards"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/ExternalCards')]",
+      "type": "Microsoft.ApiManagement/service/tags",
+      "apiVersion": "2019-01-01"
+    },
+    {
+      "properties": {
+        "displayName": "Fee"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/Fee')]",
+      "type": "Microsoft.ApiManagement/service/tags",
+      "apiVersion": "2019-01-01"
+    },
+    {
+      "properties": {
+        "displayName": "GuestVerification"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/GuestVerification')]",
+      "type": "Microsoft.ApiManagement/service/tags",
+      "apiVersion": "2019-01-01"
+    },
+    {
+      "properties": {
+        "displayName": "HealthCheck"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/HealthCheck')]",
+      "type": "Microsoft.ApiManagement/service/tags",
+      "apiVersion": "2019-01-01"
+    },
+    {
+      "properties": {
+        "displayName": "InterestRate"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/InterestRate')]",
+      "type": "Microsoft.ApiManagement/service/tags",
+      "apiVersion": "2019-01-01"
+    },
+    {
+      "properties": {
+        "displayName": "Kyc"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/Kyc')]",
+      "type": "Microsoft.ApiManagement/service/tags",
+      "apiVersion": "2019-01-01"
+    },
+    {
+      "properties": {
+        "displayName": "Locator"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/Locator')]",
+      "type": "Microsoft.ApiManagement/service/tags",
+      "apiVersion": "2019-01-01"
+    },
+    {
+      "properties": {
+        "displayName": "Notification"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/Notification')]",
+      "type": "Microsoft.ApiManagement/service/tags",
+      "apiVersion": "2019-01-01"
+    },
+    {
+      "properties": {
+        "displayName": "PaperCheck"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/PaperCheck')]",
+      "type": "Microsoft.ApiManagement/service/tags",
+      "apiVersion": "2019-01-01"
+    },
+    {
+      "properties": {
+        "displayName": "Payment"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/Payment')]",
+      "type": "Microsoft.ApiManagement/service/tags",
+      "apiVersion": "2019-01-01"
+    },
+    {
+      "properties": {
+        "displayName": "PaymentInstrument"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/PaymentInstrument')]",
+      "type": "Microsoft.ApiManagement/service/tags",
+      "apiVersion": "2019-01-01"
+    },
+    {
+      "properties": {
+        "displayName": "PaymentInstrumentToken"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/PaymentInstrumentToken')]",
+      "type": "Microsoft.ApiManagement/service/tags",
+      "apiVersion": "2019-01-01"
+    },
+    {
+      "properties": {
+        "displayName": "PointsService"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/PointsService')]",
+      "type": "Microsoft.ApiManagement/service/tags",
+      "apiVersion": "2019-01-01"
+    },
+    {
+      "properties": {
+        "displayName": "ProductFeatureLimits"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/ProductFeatureLimits')]",
+      "type": "Microsoft.ApiManagement/service/tags",
+      "apiVersion": "2019-01-01"
+    },
+    {
+      "properties": {
+        "displayName": "Products"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/Products')]",
+      "type": "Microsoft.ApiManagement/service/tags",
+      "apiVersion": "2019-01-01"
+    },
+    {
+      "properties": {
+        "displayName": "Purse"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/Purse')]",
+      "type": "Microsoft.ApiManagement/service/tags",
+      "apiVersion": "2019-01-01"
+    },
+    {
+      "properties": {
+        "displayName": "Sample"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/Sample')]",
+      "type": "Microsoft.ApiManagement/service/tags",
+      "apiVersion": "2019-01-01"
+    },
+    {
+      "properties": {
+        "displayName": "Scc"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/Scc')]",
+      "type": "Microsoft.ApiManagement/service/tags",
+      "apiVersion": "2019-01-01"
+    },
+    {
+      "properties": {
+        "displayName": "SccEligibilities"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/SccEligibilities')]",
+      "type": "Microsoft.ApiManagement/service/tags",
+      "apiVersion": "2019-01-01"
+    },
+    {
+      "properties": {
+        "displayName": "Transactions"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/Transactions')]",
+      "type": "Microsoft.ApiManagement/service/tags",
+      "apiVersion": "2019-01-01"
+    },
+    {
+      "properties": {
+        "displayName": "Transfers"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/Transfers')]",
+      "type": "Microsoft.ApiManagement/service/tags",
+      "apiVersion": "2019-01-01"
+    },
+    {
+      "properties": {
+        "displayName": "TrialDeposit"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/TrialDeposit')]",
+      "type": "Microsoft.ApiManagement/service/tags",
+      "apiVersion": "2019-01-01"
+    },
+    {
+      "properties": {
+        "displayName": "Users"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/Users')]",
+      "type": "Microsoft.ApiManagement/service/tags",
+      "apiVersion": "2019-01-01"
+    },
+    {
+      "properties": {
+        "displayName": "VIPFeature"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/VIPFeature')]",
+      "type": "Microsoft.ApiManagement/service/tags",
+      "apiVersion": "2019-01-01"
+    }
+  ]
+}
