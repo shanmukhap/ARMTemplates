@@ -1,0 +1,31 @@
+version: 0.0.1   # Required
+apimServiceName: NS-Greendot-APIMServiceInstance
+apiVersionSets:   # Optional
+  - id: Gdot-BaaS
+    displayName: Gdot-BaaS
+    description: Version one
+    versioningScheme: Query
+    versionQueryName: myversionQueryName
+    versionHeaderName: myversionHeaderName
+apis:
+  - name: GreenDot   # Required
+    openApiSpec: https://raw.githubusercontent.com/shanmukhap/ARMTemplates/main/Gdot-Baas/OpenAPI.json    # Required, can be url or local file
+    #policy: C:\Users\sponnada\Desktop\Deployment\azure-api-management-devops-resource-kit-master\azure-api-management-devops-resource-kit-master\example\Beta\Input   # Optional, can be url or local file
+    suffix: Gdot-BaaS-OpenAPI    # Required
+    apiVersion: v1 # Optional
+    apiVersionDescription: Version one # Optional
+    apiVersionSetId: Gdot-BaaS
+    apiRevision: 1   # Optional
+    apiRevisionDescription: My first revision   # Optional
+    operations:   # Optional
+      ProgramsByProgramCodeAccountsByAccountIdentifierActivateCardPost:
+        policy: C:\Users\sponnada\Desktop\Deployment\azure-api-management-devops-resource-kit-master\azure-api-management-devops-resource-kit-master\example\Beta\Input\ProgramsByProgramCodeAccountsByAccountIdentifierActivateCardPost.xml
+    authenticationSettings:   # Optional
+      subscriptionKeyRequired: false
+      #oAuth2:
+      #    authorizationServerId: apimgmtaad
+      #    scope: scope
+    products: starter    # Optional, adds api to the specified products
+outputLocation: C:\Users\sponnada\Desktop\Deployment\azure-api-management-devops-resource-kit-master\azure-api-management-devops-resource-kit-master\example\Beta\Output   # Required, folder the creator will write the templates to
+ #linked: true   # Optional
+ #linkedTemplatesBaseUrl : https://raw.githubusercontent.com/miaojiang/azure-api-management-devops-example/MVP/example/demo/Output  # Required if 'linked' property is set to true
