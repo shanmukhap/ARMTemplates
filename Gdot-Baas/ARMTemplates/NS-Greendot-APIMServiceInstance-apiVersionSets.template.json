@@ -1,0 +1,24 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "ApimServiceName": {
+      "type": "string"
+    }
+  },
+  "resources": [
+    {
+      "properties": {
+        "displayName": "Gdot-BaaS",
+        "description": "Version one",
+        "versionQueryName": "myversionQueryName",
+        "versionHeaderName": "myversionHeaderName",
+        "versioningScheme": "Query"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/Gdot-BaaS')]",
+      "type": "Microsoft.ApiManagement/service/apiVersionSets",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": []
+    }
+  ]
+}

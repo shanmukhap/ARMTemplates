@@ -1,0 +1,23 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "ApimServiceName": {
+      "type": "string"
+    }
+  },
+  "resources": [
+    {
+      "properties": {
+        "apiVersionSetId": "[resourceId('Microsoft.ApiManagement/service/apiVersionSets', parameters('ApimServiceName'), 'Gdot-BaaS')]",
+        "path": "Gdot-BaaS-OpenAPI/471deca9e54b4becbeb2dd23dd144bed",
+        "value": "https://raw.githubusercontent.com/shanmukhap/ARMTemplates/main/Gdot-Baas/OpenAPI.json",
+        "format": "openapi-link"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/GreenDot')]",
+      "type": "Microsoft.ApiManagement/service/apis",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": []
+    }
+  ]
+}

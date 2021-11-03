@@ -1,0 +1,54 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "ApimServiceName": {
+      "type": "string"
+    }
+  },
+  "resources": [
+    {
+      "properties": {
+        "authenticationSettings": {
+          "subscriptionKeyRequired": false
+        },
+        "apiRevision": "1",
+        "apiVersion": "v1",
+        "isCurrent": false,
+        "apiRevisionDescription": "My first revision",
+        "apiVersionDescription": "Version one",
+        "apiVersionSetId": "[resourceId('Microsoft.ApiManagement/service/apiVersionSets', parameters('ApimServiceName'), 'Gdot-BaaS')]",
+        "subscriptionRequired": false,
+        "displayName": "GreenDot",
+        "path": "Gdot-BaaS-OpenAPI",
+        "protocols": [
+          "https"
+        ]
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/GreenDot')]",
+      "type": "Microsoft.ApiManagement/service/apis",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": []
+    },
+    {
+      "properties": {
+        "value": "https://raw.githubusercontent.com/shanmukhap/ARMTemplates/main/Gdot-Baas/policies/ProgramsByProgramCodeAccountsByAccountIdentifierActivateCardPost.xml",
+        "format": "rawxml-link"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/GreenDot/ProgramsByProgramCodeAccountsByAccountIdentifierActivateCardPost/policy')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/policies",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('ApimServiceName'), 'GreenDot')]"
+      ]
+    },
+    {
+      "name": "[concat(parameters('ApimServiceName'), '/starter/GreenDot')]",
+      "type": "Microsoft.ApiManagement/service/products/apis",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('ApimServiceName'), 'GreenDot')]"
+      ]
+    }
+  ]
+}
